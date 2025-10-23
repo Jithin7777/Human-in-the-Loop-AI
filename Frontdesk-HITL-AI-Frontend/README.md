@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# 🤖 Frontdesk-HITL-AI (Human-in-the-Loop System)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simulated **Human-in-the-Loop AI Supervisor** system for a salon, built for the **Frontdesk Engineering Test**.  
+This project demonstrates how an AI receptionist can intelligently **escalate to a human supervisor**, **learn from their response**, and **update its knowledge base** automatically.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+When the AI agent receives a customer call:
+- If it knows the answer → responds immediately.
+- If it doesn’t → says *“Let me check with my supervisor”* and creates a **help request**.
+- A human supervisor views pending requests on the dashboard and replies.
+- The AI then:
+  - Follows up with the customer.
+  - Updates its **knowledge base** so it can answer next time.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+  ## ⚙️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### **Frontend**
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- Axios (API calls)
+- pnpm (package manager)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### **Backend**
+- Node.js + Express
+- TypeScript
+- MongoDB + Mongoose
+- LiveKit
+- pnpm (package manager)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+### **1️⃣ Clone the repository**
+```bash
+git clone git@github.com:Jithin7777/Human-in-the-Loop-AI.git
+cd Human-in-the-Loop-AI
+```
+```bash
+cd Frontdesk-HITL-AI-Backend
+pnpm install
+pnpm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd Frontdesk-HITL-AI-Backend
+pnpm install
+pnpm dev
 ```
