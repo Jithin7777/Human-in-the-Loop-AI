@@ -81,12 +81,12 @@ export const resolveQuestion = async (req: Request, res: Response) => {
       { upsert: true }
     );
 
-    // 3️ Notify customer
+    // Notify customer
     console.log(
       ` AI Follow-up to Customer (${helpRequest.customerId}): "Hey! I checked with my supervisor — ${answer}"`
     );
 
-    // 4️ Send confirmation to supervisor UI
+    //  Send confirmation to supervisor UI
     res.json({
       message: "Help request resolved successfully",
       resolvedAnswer: answer,
@@ -109,7 +109,6 @@ export const getPendingRequests = async (_req: Request, res: Response) => {
   }
 };
 
-//  Add this function
 export const getAllRequests = async (_req: Request, res: Response) => {
   try {
     const allRequests = await HelpRequest.find();
