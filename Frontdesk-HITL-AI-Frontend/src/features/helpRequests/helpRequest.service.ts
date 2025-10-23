@@ -34,7 +34,9 @@ export const resolveRequest = async (
 
 export const getResolvedRequests = async (
   customerId: string
-): Promise<{ question: string; resolvedAnswer: string; supervisorReply?: string }[]> => {
+): Promise<
+  { question: string; resolvedAnswer: string; supervisorReply?: string }[]
+> => {
   const res = await API.get(`/helpRequests/resolved/${customerId}`);
   return res.data;
 };

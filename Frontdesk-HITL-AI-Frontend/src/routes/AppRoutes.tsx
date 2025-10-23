@@ -1,17 +1,17 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
-const HelpRequestList = lazy(() => import("../features/helpRequests/HelpRequestList"));
-const KnowledgeBase = lazy(() => import("../features/knowledgeBase/KnowledgeBase"));
-const VoiceAssistant = lazy(() => import("../features/voice/VoiceAssistant"));
+const HelpRequestsPage = lazy(() => import("../pages/HelpRequestsPage"));
+const KnowledgeBasePage = lazy(() => import("../pages/KnowledgeBasePage"));
+const VoiceAssistantPage = lazy(() => import("../pages/VoiceAssistantPage"));
 
 const AppRoutes: React.FC = () => {
   return (
     <Suspense fallback={<div className="py-10 text-center">Loading...</div>}>
       <Routes>
-        <Route path="/" element={<HelpRequestList />} />
-        <Route path="/knowledge" element={<KnowledgeBase />} />
-        <Route path="/voice" element={<VoiceAssistant />} />
+        <Route path="/" element={<HelpRequestsPage />} />
+        <Route path="/knowledge" element={<KnowledgeBasePage />} />
+        <Route path="/voice" element={<VoiceAssistantPage />} />
       </Routes>
     </Suspense>
   );

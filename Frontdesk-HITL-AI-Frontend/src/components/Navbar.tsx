@@ -35,7 +35,6 @@ const Navbar: React.FC = () => {
     <header className="bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo/Brand */}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
               <span className="text-blue-600 font-bold text-sm">FD</span>
@@ -58,7 +57,6 @@ const Navbar: React.FC = () => {
             </NavLink>
           </nav>
 
-          {/* Mobile menu button */}
           <button
             onClick={toggleMobileMenu}
             className="md:hidden p-2 rounded-lg text-white hover:bg-white/20 transition-colors"
@@ -68,7 +66,6 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 border-t border-blue-500 pt-4">
             <nav className="flex  flex-col items-start gap-2">
